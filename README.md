@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+В конце модуля вам предстоит создать приложение для поиска авиабилетов с помощью React, Redux Toolkit и TypeScript.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Особенности приложения:
+Работа с фейковым серверным API с помощью async-thunk.
+Сортировка билетов по цене, длительности перелёта и количеству пересадок.
+Фильтрация по авиакомпаниям.
+Фильтрация по количеству пересадок.
+Вы можете использовать любой формат данных, но он должен поддерживать сортировку.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Чтобы создать заготовку проекта, воспользуйтесь Vite и выберите пресет react-ts или react-swc-ts:
 
-## React Compiler
+npm create vite@latest или yarn create vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Также вы можете использовать Create React App (но учтите, что с сентября 2022 г. эта утилита больше не поддерживается).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Критерии оценивания
+Всего за проект можно получить 10 баллов.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Функциональные требования:
+Проект создан с помощью Vite или Create React App, исправно запускается с помощью команды npm start или npm run dev и собирается с помощью npm run build.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Полностью удовлетворяет — 2 балла.
+Частично удовлетворяет — 1 балл (проект собирается с ошибками).
+Не удовлетворяет — 0 баллов.
+Проект использует Redux Toolkit, не использует стандартный Redux с createStore, не использует легаси-методы connect, mapStateToProps, mapDispatchToProps.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Полностью удовлетворяет — 2 балла.
+Частично удовлетворяет — 1 балл (проект исправно работает, но использует старый API).
+Не удовлетворяет — 0 баллов.
+Требования к адаптивной вёрстке — приложение в целом соответствует макету. Версии для ПК и мобильных устройств исправно работают.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Полностью удовлетворяет — 2 балла.
+Частично удовлетворяет — 1 балл (неправильная работа на одной из версий, сильное несоответствие макету).
+Не удовлетворяет — 0 баллов.
+Используются дополнительные методы из Redux Toolkit, такие как createAsyncThunk для запросов к API, createEntityAdapter для работы с массивами данных.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+За каждый дополнительный метод — 1 балл.
+Проект написан на TypeScript:
+
+Полностью удовлетворяет — 2 балла.
+Не удовлетворяет — 0 баллов.
